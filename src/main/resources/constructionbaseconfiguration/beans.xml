@@ -6,6 +6,8 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
-    <context:annotation-config/>
-    <context:component-scan base-package="annotationbasedconfiguration"/>
+    <bean id="accountRepository" class="pojobean.AccountRepositoryIml"/>
+    <bean id = "accountService" class = "dependencyinjection.AccountServiceConstructorImpl">
+        <constructor-arg name="accountRepository" ref="accountRepository"/>
+    </bean>
 </beans>

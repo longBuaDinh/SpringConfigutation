@@ -5,7 +5,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+    <bean id="account1" class="pojobean.Account" scope="singleton">
+        <property name="id" value="1"/>
+        <property name="ownerName" value="John"/>
+        <property name="balance" value="20.0"/>
+    </bean>
 
-    <context:annotation-config/>
-    <context:component-scan base-package="annotationbasedconfiguration"/>
+    <bean id="account2" class="pojobean.Account" scope="prototype">
+        <property name="id" value="2"/>
+        <property name="ownerName" value="Michael"/>
+        <property name="balance" value="25.0"/>
+    </bean>
 </beans>
